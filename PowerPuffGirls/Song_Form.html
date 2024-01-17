@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> Song Collection </title>
+</head>
+
+<body>
+<h1>Song Collection Form</h1>
+<p><b>Enter song details:</b></p>
+<p style="color:red;"><i>*ALL fields are required</i></p>
+<form name="songForm" action="Song_Register.php" method="POST">
+
+Song Title: <input type="text" name="Song" size="15"  required autofocus>
+<br><br>
+Song Artist/Band: <input type="text" name="Artist" size="15"  required autofocus>
+<br><br>
+Song Genre: 
+<script type="text/javascript">
+function showfield(name){
+  if(name=='other')document.getElementById('div1').innerHTML = 'Other: <input type="text" name="other" /required autofocus>';
+  else 
+    document.getElementById('div1').innerHTML='';
+} 
+</script>
+<select id="songs" name="Genre" class="form-control" onchange="showfield(this.options[this.selectedIndex].value)" required autofocus>
+<option value="">-Please Choose-</option>
+<option value="rock">Rock</option>
+<option value="jazz">Jazz</option>
+<option value="country">Country</option>
+<option value="pop">Pop</option>
+<option value="other">Other Genre, Please specify</option>
+</select>
+<div id="div1"></div>
+<br>
+Song Language: <input type="text" name="Language" size="15" maxlength="50" required autofocus>
+<br><br>
+Release Date: <input type="date" name="Date" required autofocus>
+<br><br>
+Audio/Video (URL): <input type="text" name="Link" size="15" min="5" required autofocus>
+<br><br>
+<input type="submit" value="Display Song Details">
+<input type="reset" value="Cancel">
+
+</form>
+
+
+</body>
+</html>
